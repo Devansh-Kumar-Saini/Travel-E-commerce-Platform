@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book your perfect vacation with Journey Junction Hub - Easy booking system for hotels, destinations, and travel packages.">
+    <title>Book Your Trip - Journey Junction Hub</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../static/css/shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .booking-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('../static/images/booking.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 25vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .booking-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            font-family: 'CatchyMager', Arial, sans-serif;
+        }
+        
+        .booking-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .booking-summary {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+        
+        .price-display {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4CAF50;
+            text-align: center;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">JJH</a>
+            
+            <ul class="nav-list" id="navList">
+                <li><a href="../templates/index.html#home">Home</a></li>
+                <li><a href="../templates/elitemembers.html">Join Club</a></li>
+                <li><a href="../templates/booking.html">Book Vacation</a></li>
+                <li><a href="../templates/rooms.html">Rooms</a></li>
+                <li><a href="../templates/cabs.html">Cab Services</a></li>
+                <li><a href="../templates/index.html#reviews">Reviews</a></li>
+                <li><a href="../templates/index.html#about">About Us</a></li>
+                <li><a href="../templates/index.html#contact">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="booking-hero">
+        <div class="container">
+            <h1>Book Your Dream Vacation</h1>
+            <p>Plan your perfect getaway with our easy booking system</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <form class="booking-form" id="bookingForm">
+                <h2 class="text-center mb-2">
+                    <i class="fas fa-calendar-check"></i> 
+                    Reservation Details
+                </h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="destination">
+                            <i class="fas fa-map-marker-alt"></i> Destination
+                        </label>
+                        <select id="destination" name="destination" required>
+                            <option value="">Select your destination</option>
+                            <option value="goa">Goa, India</option>
+                            <option value="kerala">Kerala, India</option>
+                            <option value="rajasthan">Rajasthan, India</option>
+                            <option value="himachal">Himachal Pradesh, India</option>
+                            <option value="kashmir">Kashmir, India</option>
+                            <option value="andaman">Andaman & Nicobar Islands</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guests">
+                            <i class="fas fa-users"></i> Number of Guests
+                        </label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Select guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5+ Guests</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkin">
+                            <i class="fas fa-calendar-alt"></i> Check-in Date
+                        </label>
+                        <input type="date" id="checkin" name="checkin" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="checkout">
+                            <i class="fas fa-calendar-alt"></i> Check-out Date
+                        </label>
+                        <input type="date" id="checkout" name="checkout" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="package">
+                            <i class="fas fa-gift"></i> Package Type
+                        </label>
+                        <select id="package" name="package" required>
+                            <option value="">Select package</option>
+                            <option value="basic">Basic Package - ₹5,000/night</option>
+                            <option value="standard">Standard Package - ₹8,000/night</option>
+                            <option value="premium">Premium Package - ₹12,000/night</option>
+                            <option value="deluxe">Deluxe Package - ₹15,000/night</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="room">
+                            <i class="fas fa-bed"></i> Room Type
+                        </label>
+                        <select id="room" name="room" required>
+                            <option value="">Select room type</option>
+                            <option value="standard">Standard Room</option>
+                            <option value="deluxe">Deluxe Room</option>
+                            <option value="suite">Family Suite</option>
+                            <option value="premium">Premium Suite</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="requirements">
+                        <i class="fas fa-comment"></i> Special Requirements (Optional)
+                    </label>
+                    <textarea id="requirements" name="requirements" rows="3" 
+                              placeholder="Any special requests or requirements..."></textarea>
+                </div>
+                
+                <div class="booking-summary">
+                    <h3 class="text-center">Booking Summary</h3>
+                    <div id="summaryContent">
+                        <p class="text-center">Please fill in the details above to see your booking summary</p>
+                    </div>
+                    <div class="price-display" id="totalPrice">₹0</div>
+                </div>
+                
+                <div class="text-center mt-2">
+                    <button type="submit" class="btn btn-large">
+                        <i class="fas fa-credit-card"></i> 
+                        Proceed to Payment
+                    </button>
+                    <a href="index_new.html" class="btn btn-secondary btn-large ml-2">
+                        <i class="fas fa-arrow-left"></i> 
+                        Back to Home
+                    </a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Journey Junction Hub. All rights reserved.</p>
+            <p>Book with confidence - Your dream vacation awaits!</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Booking form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('bookingForm');
+            const summaryContent = document.getElementById('summaryContent');
+            const totalPrice = document.getElementById('totalPrice');
+            
+            // Package prices
+            const packagePrices = {
+                'basic': 5000,
+                'standard': 8000,
+                'premium': 12000,
+                'deluxe': 15000
+            };
+            
+            // Update booking summary
+            function updateSummary() {
+                const destination = document.getElementById('destination').value;
+                const guests = document.getElementById('guests').value;
+                const checkin = document.getElementById('checkin').value;
+                const checkout = document.getElementById('checkout').value;
+                const packageType = document.getElementById('package').value;
+                const room = document.getElementById('room').value;
+                
+                if (destination && guests && checkin && checkout && packageType) {
+                    const checkinDate = new Date(checkin);
+                    const checkoutDate = new Date(checkout);
+                    const nights = Math.ceil((checkoutDate - checkinDate) / (1000 * 60 * 60 * 24));
+                    const pricePerNight = packagePrices[packageType] || 0;
+                    const total = nights * pricePerNight * parseInt(guests);
+                    
+                    summaryContent.innerHTML = `
+                        <p><strong>Destination:</strong> ${destination.charAt(0).toUpperCase() + destination.slice(1)}</p>
+                        <p><strong>Guests:</strong> ${guests}</p>
+                        <p><strong>Dates:</strong> ${checkin} to ${checkout}</p>
+                        <p><strong>Nights:</strong> ${nights}</p>
+                        <p><strong>Package:</strong> ${packageType.charAt(0).toUpperCase() + packageType.slice(1)}</p>
+                        <p><strong>Room:</strong> ${room}</p>
+                    `;
+                    totalPrice.textContent = `₹${total.toLocaleString()}`;
+                } else {
+                    summaryContent.innerHTML = '<p class="text-center">Please fill in the details above to see your booking summary</p>';
+                    totalPrice.textContent = '₹0';
+                }
+            }
+            
+            // Add event listeners to form fields
+            ['destination', 'guests', 'checkin', 'checkout', 'package', 'room'].forEach(id => {
+                document.getElementById(id).addEventListener('change', updateSummary);
+            });
+            
+            // Set minimum date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('checkin').min = today;
+            document.getElementById('checkout').min = today;
+            
+            // Update checkout minimum date when checkin changes
+            document.getElementById('checkin').addEventListener('change', function() {
+                document.getElementById('checkout').min = this.value;
+            });
+            
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate dates
+                const checkin = new Date(document.getElementById('checkin').value);
+                const checkout = new Date(document.getElementById('checkout').value);
+                
+                if (checkout <= checkin) {
+                    alert('Check-out date must be after check-in date');
+                    return;
+                }
+                
+                // Redirect to payment page
+                window.location.href = 'paymentpage_new.html';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Secure payment gateway for Journey Junction Hub - Complete your booking with our safe and encrypted payment system.">
+    <title>Secure Payment - Journey Junction Hub</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../static/css/shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .payment-hero {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            padding: 3rem 0;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .payment-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .booking-summary {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            height: fit-content;
+        }
+        
+        .payment-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .summary-item:last-child {
+            border-bottom: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #4CAF50;
+        }
+        
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .payment-method {
+            background: #f8f9fa;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-method:hover,
+        .payment-method.selected {
+            border-color: #4CAF50;
+            background: #f0f8f0;
+        }
+        
+        .payment-method i {
+            font-size: 2rem;
+            color: #4CAF50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .security-info {
+            background: #e8f5e8;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .card-form {
+            display: none;
+        }
+        
+        .card-form.active {
+            display: block;
+        }
+        
+        .card-input {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+        
+        .card-input input {
+            padding-right: 3rem;
+        }
+        
+        .card-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .payment-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">JJH</a>
+            
+            <ul class="nav-list" id="navList">
+                <li><a href="../templates/index.html#home">Home</a></li>
+                <li><a href="../templates/elitemembers.html">Join Club</a></li>
+                <li><a href="../templates/booking.html">Book Vacation</a></li>
+                <li><a href="../templates/rooms.html">Rooms</a></li>
+                <li><a href="../templates/cabs.html">Cab Services</a></li>
+                <li><a href="../templates/index.html#reviews">Reviews</a></li>
+                <li><a href="../templates/index.html#about">About Us</a></li>
+                <li><a href="../templates/index.html#contact">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="payment-hero">
+        <div class="container">
+            <h1><i class="fas fa-shield-alt"></i> Secure Payment</h1>
+            <p>Complete your booking with our encrypted payment system</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <div class="payment-container">
+                <!-- Booking Summary -->
+                <div class="booking-summary">
+                    <h2><i class="fas fa-receipt"></i> Booking Summary</h2>
+                    
+                    <div class="summary-item">
+                        <span>Service:</span>
+                        <span id="serviceName">Hotel Booking</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Destination:</span>
+                        <span id="destination">Goa, India</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Check-in:</span>
+                        <span id="checkinDate">2024-08-15</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Check-out:</span>
+                        <span id="checkoutDate">2024-08-18</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Guests:</span>
+                        <span id="guestCount">2 Adults</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Room Type:</span>
+                        <span id="roomType">Deluxe Room</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Nights:</span>
+                        <span id="nightCount">3 Nights</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Base Amount:</span>
+                        <span id="baseAmount">₹36,000</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Taxes & Fees:</span>
+                        <span id="taxes">₹4,320</span>
+                    </div>
+                    
+                    <div class="summary-item">
+                        <span>Total Amount:</span>
+                        <span id="totalAmount">₹40,320</span>
+                    </div>
+                    
+                    <div class="security-info">
+                        <i class="fas fa-lock" style="color: #4CAF50; font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+                        <h4>100% Secure Payment</h4>
+                        <p>Your payment information is encrypted and secure. We never store your card details.</p>
+                    </div>
+                </div>
+
+                <!-- Payment Form -->
+                <div class="payment-form">
+                    <h2><i class="fas fa-credit-card"></i> Payment Details</h2>
+                    
+                    <form id="paymentForm">
+                        <div class="form-group">
+                            <label>Select Payment Method</label>
+                            <div class="payment-methods">
+                                <div class="payment-method selected" data-method="card">
+                                    <i class="fas fa-credit-card"></i>
+                                    <div>Card</div>
+                                </div>
+                                
+                                <div class="payment-method" data-method="upi">
+                                    <i class="fab fa-google-pay"></i>
+                                    <div>UPI</div>
+                                </div>
+                                
+                                <div class="payment-method" data-method="netbanking">
+                                    <i class="fas fa-university"></i>
+                                    <div>Net Banking</div>
+                                </div>
+                                
+                                <div class="payment-method" data-method="wallet">
+                                    <i class="fas fa-wallet"></i>
+                                    <div>Wallet</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card Payment Form -->
+                        <div class="card-form active" id="cardForm">
+                            <div class="form-group">
+                                <label for="cardNumber">
+                                    <i class="fas fa-credit-card"></i> Card Number
+                                </label>
+                                <div class="card-input">
+                                    <input type="text" id="cardNumber" name="cardNumber" 
+                                           placeholder="1234 5678 9012 3456" maxlength="19" required>
+                                    <i class="fas fa-credit-card card-icon"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiryDate">
+                                        <i class="fas fa-calendar"></i> Expiry Date
+                                    </label>
+                                    <input type="text" id="expiryDate" name="expiryDate" 
+                                           placeholder="MM/YY" maxlength="5" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="cvv">
+                                        <i class="fas fa-lock"></i> CVV
+                                    </label>
+                                    <input type="text" id="cvv" name="cvv" 
+                                           placeholder="123" maxlength="4" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="cardName">
+                                    <i class="fas fa-user"></i> Cardholder Name
+                                </label>
+                                <input type="text" id="cardName" name="cardName" 
+                                       placeholder="Name as on card" required>
+                            </div>
+                        </div>
+                        
+                        <!-- UPI Form -->
+                        <div class="card-form" id="upiForm">
+                            <div class="form-group">
+                                <label for="upiId">
+                                    <i class="fab fa-google-pay"></i> UPI ID
+                                </label>
+                                <input type="text" id="upiId" name="upiId" 
+                                       placeholder="yourname@paytm" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Net Banking Form -->
+                        <div class="card-form" id="netbankingForm">
+                            <div class="form-group">
+                                <label for="bank">
+                                    <i class="fas fa-university"></i> Select Bank
+                                </label>
+                                <select id="bank" name="bank" required>
+                                    <option value="">Choose your bank</option>
+                                    <option value="sbi">State Bank of India</option>
+                                    <option value="hdfc">HDFC Bank</option>
+                                    <option value="icici">ICICI Bank</option>
+                                    <option value="axis">Axis Bank</option>
+                                    <option value="pnb">Punjab National Bank</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- Wallet Form -->
+                        <div class="card-form" id="walletForm">
+                            <div class="form-group">
+                                <label for="wallet">
+                                    <i class="fas fa-wallet"></i> Select Wallet
+                                </label>
+                                <select id="wallet" name="wallet" required>
+                                    <option value="">Choose wallet</option>
+                                    <option value="paytm">Paytm</option>
+                                    <option value="phonepe">PhonePe</option>
+                                    <option value="googlepay">Google Pay</option>
+                                    <option value="amazonpay">Amazon Pay</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" required> 
+                                I agree to the <a href="#" style="color: #4CAF50;">Terms & Conditions</a> 
+                                and <a href="#" style="color: #4CAF50;">Privacy Policy</a>
+                            </label>
+                        </div>
+                        
+                        <div class="text-center mt-2">
+                            <button type="submit" class="btn btn-large" style="width: 100%;">
+                                <i class="fas fa-lock"></i> 
+                                Pay ₹40,320 Securely
+                            </button>
+                            
+                            <a href="booking_new.html" class="btn btn-secondary mt-1" style="width: 100%; display: block;">
+                                <i class="fas fa-arrow-left"></i> 
+                                Back to Booking
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Journey Junction Hub. All rights reserved.</p>
+            <p>Secure payments powered by industry-leading encryption</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const paymentMethods = document.querySelectorAll('.payment-method');
+            const cardForms = document.querySelectorAll('.card-form');
+            
+            // Payment method selection
+            paymentMethods.forEach(method => {
+                method.addEventListener('click', function() {
+                    paymentMethods.forEach(m => m.classList.remove('selected'));
+                    this.classList.add('selected');
+                    
+                    const selectedMethod = this.dataset.method;
+                    cardForms.forEach(form => form.classList.remove('active'));
+                    document.getElementById(selectedMethod + 'Form').classList.add('active');
+                });
+            });
+            
+            // Card number formatting
+            const cardNumberInput = document.getElementById('cardNumber');
+            if (cardNumberInput) {
+                cardNumberInput.addEventListener('input', function() {
+                    let value = this.value.replace(/\s/g, '').replace(/[^0-9]/gi, '');
+                    let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+                    this.value = formattedValue;
+                });
+            }
+            
+            // Expiry date formatting
+            const expiryInput = document.getElementById('expiryDate');
+            if (expiryInput) {
+                expiryInput.addEventListener('input', function() {
+                    let value = this.value.replace(/\D/g, '');
+                    if (value.length >= 2) {
+                        value = value.substring(0, 2) + '/' + value.substring(2, 4);
+                    }
+                    this.value = value;
+                });
+            }
+            
+            // CVV validation
+            const cvvInput = document.getElementById('cvv');
+            if (cvvInput) {
+                cvvInput.addEventListener('input', function() {
+                    this.value = this.value.replace(/\D/g, '');
+                });
+            }
+            
+            // Form submission
+            document.getElementById('paymentForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Show loading state
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                submitBtn.disabled = true;
+                
+                // Simulate payment processing
+                setTimeout(() => {
+                    alert('Payment successful! Your booking has been confirmed.');
+                    window.location.href = 'paymentdone_new.html';
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>

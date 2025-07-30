@@ -1,0 +1,36 @@
+/* header css */
+
+header {
+    background-color: rgba(0, 0, 0, 0.0); /* Black background with 70% opacity */
+    padding: 5px 0;
+    position:absolute; /* Fixed position to stay at the top */
+    width: 100%;
+    z-index: 1000; /* Ensure the header is above other content */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: rgba(24, 24, 160, 0.829);
+}

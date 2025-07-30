@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3+1 Package Deal - Book 3 nights and get the 4th night absolutely free with Journey Junction Hub. Amazing value for extended stays!">
+    <title>3+1 Package Deal - Journey Junction Hub</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../static/css/shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .package-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('../static/images/page2offers2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .free-badge {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        .value-proposition {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid #4CAF50;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+        
+        .package-comparison {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin: 3rem 0;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+        
+        .comparison-side {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+        
+        .regular-booking {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+        }
+        
+        .package-deal {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+            border: 2px solid #4CAF50;
+            position: relative;
+        }
+        
+        .best-deal-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff6b35;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+        
+        .price-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .regular-price {
+            color: #dc3545;
+        }
+        
+        .package-price {
+            color: #4CAF50;
+        }
+        
+        .savings-highlight {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .savings-amount {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #856404;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .free-badge {
+                font-size: 1.5rem;
+                padding: 0.75rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">JJH</a>
+            
+            <ul class="nav-list" id="navList">
+                <li><a href="../templates/index.html#home">Home</a></li>
+                <li><a href="../templates/elitemembers.html">Join Club</a></li>
+                <li><a href="../templates/booking.html">Book Vacation</a></li>
+                <li><a href="../templates/rooms.html">Rooms</a></li>
+                <li><a href="../templates/cabs.html">Cab Services</a></li>
+                <li><a href="../templates/index.html#reviews">Reviews</a></li>
+                <li><a href="../templates/index.html#about">About Us</a></li>
+                <li><a href="../templates/index.html#contact">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="package-hero">
+        <div class="container">
+            <div class="free-badge">
+                <i class="fas fa-gift"></i> 4th NIGHT FREE
+            </div>
+            <h1>3+1 Package Deal</h1>
+            <p>Book 3 nights and get the 4th night absolutely free!</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <!-- Value Proposition -->
+            <section class="value-proposition">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Extended Stay</h3>
+                    <p>Perfect for longer vacations and extended getaways. More time to explore and relax.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>25% Savings</h3>
+                    <p>Automatically save 25% on your accommodation when you book 4 nights with our 3+1 deal.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-calendar-plus"></i>
+                    </div>
+                    <h3>Flexible Dates</h3>
+                    <p>Available throughout the year with flexible check-in dates. Plan your perfect extended vacation.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Premium Benefits</h3>
+                    <p>Enjoy all our premium amenities and services for the entire duration of your extended stay.</p>
+                </div>
+            </section>
+
+            <!-- Package Comparison -->
+            <section class="package-comparison">
+                <h2 class="text-center mb-2">See How Much You Save</h2>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-side regular-booking">
+                        <h3>Regular Booking</h3>
+                        <p>Pay for each night separately</p>
+                        <div class="price-display regular-price">₹48,000</div>
+                        <p>4 nights × ₹12,000 per night</p>
+                        <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+                            <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> No discount</li>
+                            <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Full price for all nights</li>
+                            <li><i class="fas fa-times" style="color: #dc3545; margin-right: 0.5rem;"></i> Higher total cost</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-side package-deal">
+                        <div class="best-deal-badge">BEST DEAL</div>
+                        <h3>3+1 Package Deal</h3>
+                        <p>Pay for 3 nights, get 4th free</p>
+                        <div class="price-display package-price">₹36,000</div>
+                        <p>3 nights × ₹12,000 + 1 FREE night</p>
+                        <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+                            <li><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> 4th night completely free</li>
+                            <li><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> 25% automatic savings</li>
+                            <li><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Extended vacation time</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="savings-highlight">
+                    <h3><i class="fas fa-piggy-bank"></i> Your Total Savings</h3>
+                    <div class="savings-amount">₹12,000</div>
+                    <p>That's enough for meals, activities, or spa treatments during your stay!</p>
+                </div>
+            </section>
+
+            <!-- Booking Form -->
+            <section class="form-container">
+                <h2 class="text-center mb-2">
+                    <i class="fas fa-calendar-check"></i> 
+                    Book Your 3+1 Package
+                </h2>
+                
+                <form id="packageForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="destination">
+                                <i class="fas fa-map-marker-alt"></i> Destination
+                            </label>
+                            <select id="destination" name="destination" required>
+                                <option value="">Select your destination</option>
+                                <option value="goa">Goa, India</option>
+                                <option value="kerala">Kerala, India</option>
+                                <option value="rajasthan">Rajasthan, India</option>
+                                <option value="himachal">Himachal Pradesh, India</option>
+                                <option value="kashmir">Kashmir, India</option>
+                                <option value="andaman">Andaman & Nicobar Islands</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guests">
+                                <i class="fas fa-users"></i> Number of Guests
+                            </label>
+                            <select id="guests" name="guests" required>
+                                <option value="">Select guests</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5+ Guests</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="checkin">
+                                <i class="fas fa-calendar-alt"></i> Check-in Date
+                            </label>
+                            <input type="date" id="checkin" name="checkin" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="checkout">
+                                <i class="fas fa-calendar-alt"></i> Check-out Date
+                            </label>
+                            <input type="date" id="checkout" name="checkout" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="roomType">
+                            <i class="fas fa-bed"></i> Room Type
+                        </label>
+                        <select id="roomType" name="roomType" required>
+                            <option value="">Select room type</option>
+                            <option value="standard" data-price="5000">Standard Room - ₹5,000/night</option>
+                            <option value="premium" data-price="8000">Premium Room - ₹8,000/night</option>
+                            <option value="deluxe" data-price="12000">Deluxe Room - ₹12,000/night</option>
+                            <option value="suite" data-price="15000">Family Suite - ₹15,000/night</option>
+                        </select>
+                    </div>
+                    
+                    <div class="savings-highlight" id="packageSummary" style="display: none;">
+                        <h3><i class="fas fa-calculator"></i> Package Summary</h3>
+                        <div id="summaryDetails">
+                            <p>Regular Price (4 nights): <span id="regularTotal">₹0</span></p>
+                            <p>3+1 Package Price: <span id="packageTotal">₹0</span></p>
+                        </div>
+                        <div class="savings-amount">
+                            You Save: <span id="totalSavings">₹0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-2">
+                        <button type="submit" class="btn btn-large" style="width: 100%;">
+                            <i class="fas fa-gift"></i> 
+                            Book 3+1 Package Now
+                        </button>
+                        
+                        <a href="index_new.html" class="btn btn-secondary mt-1" style="width: 100%; display: block;">
+                            <i class="fas fa-arrow-left"></i> 
+                            Back to Home
+                        </a>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Package Benefits -->
+            <section class="card mt-3">
+                <h3><i class="fas fa-star"></i> What's Included in Your 3+1 Package</h3>
+                <div class="grid-2 mt-2">
+                    <div>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> 4 nights accommodation (pay for 3)</li>
+                            <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Daily housekeeping service</li>
+                            <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Complimentary Wi-Fi</li>
+                            <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Welcome drink on arrival</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Late checkout (subject to availability)</li>
+                            <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Access to all hotel facilities</li>
+                            <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> 24/7 concierge service</li>
+                            <li style="padding: 0.5rem 0;"><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Free cancellation up to 48 hours</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Terms -->
+            <section class="card mt-3">
+                <h3><i class="fas fa-file-contract"></i> Terms & Conditions</h3>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>Minimum stay of 4 consecutive nights required</li>
+                    <li>Valid for new bookings only</li>
+                    <li>Cannot be combined with other offers</li>
+                    <li>Subject to room availability</li>
+                    <li>Blackout dates may apply during peak seasons</li>
+                    <li>Free night must be consecutive with paid nights</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Journey Junction Hub. All rights reserved.</p>
+            <p>3+1 Package - More nights, more memories, more savings!</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkinInput = document.getElementById('checkin');
+            const checkoutInput = document.getElementById('checkout');
+            const roomTypeSelect = document.getElementById('roomType');
+            const guestsSelect = document.getElementById('guests');
+            
+            // Set minimum date to today
+            const today = new Date().toISOString().split('T')[0];
+            checkinInput.min = today;
+            
+            // Auto-calculate checkout date (4 nights)
+            checkinInput.addEventListener('change', function() {
+                if (this.value) {
+                    const checkinDate = new Date(this.value);
+                    const checkoutDate = new Date(checkinDate.getTime() + (4 * 24 * 60 * 60 * 1000));
+                    checkoutInput.value = checkoutDate.toISOString().split('T')[0];
+                    calculatePackage();
+                }
+            });
+            
+            // Calculate package savings
+            function calculatePackage() {
+                const guests = guestsSelect.value;
+                const roomType = roomTypeSelect.value;
+                
+                if (guests && roomType) {
+                    const pricePerNight = parseInt(roomTypeSelect.options[roomTypeSelect.selectedIndex].dataset.price);
+                    const regularTotal = pricePerNight * 4 * parseInt(guests);
+                    const packageTotal = pricePerNight * 3 * parseInt(guests); // Pay for 3 nights only
+                    const savings = regularTotal - packageTotal;
+                    
+                    document.getElementById('regularTotal').textContent = `₹${regularTotal.toLocaleString()}`;
+                    document.getElementById('packageTotal').textContent = `₹${packageTotal.toLocaleString()}`;
+                    document.getElementById('totalSavings').textContent = `₹${savings.toLocaleString()}`;
+                    
+                    document.getElementById('packageSummary').style.display = 'block';
+                } else {
+                    document.getElementById('packageSummary').style.display = 'none';
+                }
+            }
+            
+            // Add event listeners
+            roomTypeSelect.addEventListener('change', calculatePackage);
+            guestsSelect.addEventListener('change', calculatePackage);
+            
+            // Form submission
+            document.getElementById('packageForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (!checkinInput.value) {
+                    alert('Please select a check-in date');
+                    return;
+                }
+                
+                alert('Great choice! Your 3+1 package booking is being processed. You\'ll save 25% on your 4-night stay!');
+                window.location.href = 'booking_new.html';
+            });
+        });
+    </script>
+</body>
+</html>

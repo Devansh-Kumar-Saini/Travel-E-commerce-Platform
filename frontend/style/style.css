@@ -1,0 +1,249 @@
+@font-face {
+    font-family: 'CatchyMager';
+    src: url("font/CatchyMager-Normal.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #cdcdc1
+}
+ 
+/*Page 1*/
+.homeheading{
+    padding-top: 8%;
+    text-align: center;
+    font-size: 200%;
+    color: white;
+    font-family: 'CatchyMager',Arial,sans-serif;
+}
+.heading1{
+    font-size:400%;
+    margin: 0;
+    white-space: pre;
+}
+.homepage{
+    height: 100vh;
+    background-image: url(img/homebackground.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+
+/* Page 2,3 */
+
+.promos-offers {
+    padding: 50px;
+    text-align: center;
+    background-color: #faf8f6;
+}
+
+.promos-offers h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #5a3728;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h2 {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+    color: #5a3728;
+}
+
+.card-content p {
+    color: #666;
+    font-size: 1em;
+    margin: 0;
+}
+
+.card-content pre {
+    font-family: Arial, sans-serif;
+    text-align: left;
+    color: #666;
+    font-size:small;
+    margin: 0;
+}
+
+/* Page 4 */
+.welcomeintro {
+    background-color: #faf8f6;
+}
+
+.welcomeintro{
+    width: 500px;
+    margin-left: 5%;
+}
+.heading{
+    font-family: 'CatchyMager',Arial,sans-serif;
+    text-align: left;
+    font-size: 3em;
+}
+.para{
+    font-family: 'CatchyMager',Arial,sans-serif;
+    text-align: left;
+    font-size: 1.5em;
+}
+.img{
+    margin-left: 55%;
+    margin-top: -45%;
+}
+
+/*---------------------
+  Gallery Section
+-----------------------*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    background-color: #faf8f6;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Press Page */
+
+.pressheading{
+    padding-top: 8%;
+    text-align: center;
+    font-size: 300%;
+    color: #5a3728;
+    font-family: 'CatchyMager',Arial,sans-serif;
+}
+.presspage{
+    height: 100vh;
+    background-image: url(img/reviews.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+
+.reviewscolumn1{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.reviewscolumn2{
+    margin-top: -30%;
+    margin-left: 50%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.reviews-item{
+    width: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.reviews-content{
+    font-family: Arial, sans-serif ;
+    font-size:small;
+}
+
+.Contactus{
+    padding-top: 8%;
+    text-align: center;
+    font-size: 300%;
+    color: #5a3728;
+    font-family: 'CatchyMager',Arial,sans-serif;
+    /* background-color:#faf8f6; */
+    height: 100vh;
+    background-image: url(img/contactus.jpg);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+}
+
+.office{
+    font-size: large;
+    color: #5a3728;
+    margin-left: 5%;
+    margin-right: 70%;
+    border-radius: 5%;
+    border-style:dashed;
+    border-color: black;
+}
+
+
+
+.workhours{
+    font-size: large;
+    color: #5a3728;
+    border-radius: 5%;
+    margin-left: 70%;
+    margin-right: 4%;
+    margin-top: -24%;
+    border-style:dashed;
+    border-color: black;
+}
+
+.logos{
+    background-color:rgba(255, 255, 255, 0.4);
+}

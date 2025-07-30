@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our luxurious rooms and suites at Journey Junction Hub - From standard rooms to premium suites, find your perfect accommodation.">
+    <title>Our Rooms & Suites - Journey Junction Hub</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../static/css/shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .rooms-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                        url('../static/images/header.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .room-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 2rem;
+        }
+        
+        .room-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .room-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .room-content {
+            padding: 2rem;
+        }
+        
+        .room-price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+        
+        .room-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        
+        .room-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .room-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .room-features i {
+            color: #4CAF50;
+            margin-right: 0.5rem;
+            width: 20px;
+        }
+        
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .package-comparison {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 20px;
+            margin-top: 3rem;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table th {
+            background: #5a3728;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .check-icon {
+            color: #4CAF50;
+            font-size: 1.2rem;
+        }
+        
+        .cross-icon {
+            color: #dc3545;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">JJH</a>
+            
+            <ul class="nav-list" id="navList">
+                <li><a href="../templates/index.html#home">Home</a></li>
+                <li><a href="../templates/elitemembers.html">Join Club</a></li>
+                <li><a href="../templates/booking.html">Book Vacation</a></li>
+                <li><a href="../templates/rooms.html">Rooms</a></li>
+                <li><a href="../templates/cabs.html">Cab Services</a></li>
+                <li><a href="../templates/index.html#reviews">Reviews</a></li>
+                <li><a href="../templates/index.html#about">About Us</a></li>
+                <li><a href="../templates/index.html#contact">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="rooms-hero">
+        <div class="container">
+            <h1>Our Luxurious Rooms & Suites</h1>
+            <p>Experience comfort and elegance in every stay</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <div class="page-header">
+                <h2>Choose Your Perfect Accommodation</h2>
+                <p>From cozy standard rooms to luxurious presidential suites, we have the perfect space for every traveler</p>
+            </div>
+            
+            <div class="rooms-grid">
+                <!-- Standard Room -->
+                <article class="room-card">
+                    <img src="../static/images/standard package.jpg" alt="Standard Room" class="room-image" loading="lazy">
+                    <div class="room-content">
+                        <h3>Standard Room</h3>
+                        <div class="room-price">₹5,000 <span style="font-size: 1rem; color: #666;">/night</span></div>
+                        <p>Perfect for budget-conscious travelers who don't want to compromise on comfort.</p>
+                        
+                        <ul class="room-features">
+                            <li><i class="fas fa-bed"></i> Queen-size bed</li>
+                            <li><i class="fas fa-wifi"></i> Free Wi-Fi</li>
+                            <li><i class="fas fa-tv"></i> 32" LED TV</li>
+                            <li><i class="fas fa-snowflake"></i> Air conditioning</li>
+                            <li><i class="fas fa-bath"></i> Private bathroom</li>
+                            <li><i class="fas fa-coffee"></i> Tea/Coffee maker</li>
+                        </ul>
+                        
+                        <div class="text-center">
+                            <a href="booking_new.html" class="btn">Book Now</a>
+                            <a href="standard_new.html" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Premium Room -->
+                <article class="room-card">
+                    <img src="../static/images/premium package.jpg" alt="Premium Room" class="room-image" loading="lazy">
+                    <div class="room-content">
+                        <h3>Premium Room</h3>
+                        <div class="room-price">₹8,000 <span style="font-size: 1rem; color: #666;">/night</span></div>
+                        <p>Enhanced comfort with premium amenities and stunning views.</p>
+                        
+                        <ul class="room-features">
+                            <li><i class="fas fa-bed"></i> King-size bed</li>
+                            <li><i class="fas fa-wifi"></i> High-speed Wi-Fi</li>
+                            <li><i class="fas fa-tv"></i> 42" Smart TV</li>
+                            <li><i class="fas fa-snowflake"></i> Climate control</li>
+                            <li><i class="fas fa-bath"></i> Luxury bathroom</li>
+                            <li><i class="fas fa-glass-martini"></i> Mini bar</li>
+                            <li><i class="fas fa-concierge-bell"></i> Room service</li>
+                        </ul>
+                        
+                        <div class="text-center">
+                            <a href="booking_new.html" class="btn">Book Now</a>
+                            <a href="premium_new.html" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Deluxe Room -->
+                <article class="room-card">
+                    <img src="../static/images/De Luxe Room.jpg" alt="Deluxe Room" class="room-image" loading="lazy">
+                    <div class="room-content">
+                        <h3>Deluxe Room</h3>
+                        <div class="room-price">₹12,000 <span style="font-size: 1rem; color: #666;">/night</span></div>
+                        <p>Spacious luxury with premium furnishings and exclusive amenities.</p>
+                        
+                        <ul class="room-features">
+                            <li><i class="fas fa-bed"></i> King-size luxury bed</li>
+                            <li><i class="fas fa-couch"></i> Separate seating area</li>
+                            <li><i class="fas fa-wifi"></i> Premium Wi-Fi</li>
+                            <li><i class="fas fa-tv"></i> 55" Smart TV</li>
+                            <li><i class="fas fa-bath"></i> Marble bathroom</li>
+                            <li><i class="fas fa-glass-martini"></i> Premium mini bar</li>
+                            <li><i class="fas fa-spa"></i> Spa amenities</li>
+                        </ul>
+                        
+                        <div class="text-center">
+                            <a href="booking_new.html" class="btn">Book Now</a>
+                            <a href="deluxe_new.html" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Family Suite -->
+                <article class="room-card">
+                    <img src="../static/images/The Family Suite.jpg" alt="Family Suite" class="room-image" loading="lazy">
+                    <div class="room-content">
+                        <h3>Family Suite</h3>
+                        <div class="room-price">₹15,000 <span style="font-size: 1rem; color: #666;">/night</span></div>
+                        <p>Perfect for families with multiple bedrooms and living space.</p>
+                        
+                        <ul class="room-features">
+                            <li><i class="fas fa-bed"></i> 2 bedrooms</li>
+                            <li><i class="fas fa-couch"></i> Living room</li>
+                            <li><i class="fas fa-utensils"></i> Kitchenette</li>
+                            <li><i class="fas fa-wifi"></i> Premium Wi-Fi</li>
+                            <li><i class="fas fa-tv"></i> Multiple TVs</li>
+                            <li><i class="fas fa-bath"></i> 2 bathrooms</li>
+                            <li><i class="fas fa-baby"></i> Child-friendly amenities</li>
+                        </ul>
+                        
+                        <div class="text-center">
+                            <a href="booking_new.html" class="btn">Book Now</a>
+                            <a href="familysuite_new.html" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Deluxe Best View -->
+                <article class="room-card">
+                    <img src="../static/images/De Luxe Best View.jpg" alt="Deluxe Best View Room" class="room-image" loading="lazy">
+                    <div class="room-content">
+                        <h3>Deluxe Best View</h3>
+                        <div class="room-price">₹18,000 <span style="font-size: 1rem; color: #666;">/night</span></div>
+                        <p>Ultimate luxury with breathtaking panoramic views and premium services.</p>
+                        
+                        <ul class="room-features">
+                            <li><i class="fas fa-mountain"></i> Panoramic views</li>
+                            <li><i class="fas fa-bed"></i> King-size luxury bed</li>
+                            <li><i class="fas fa-couch"></i> Premium seating area</li>
+                            <li><i class="fas fa-hot-tub"></i> Private balcony</li>
+                            <li><i class="fas fa-concierge-bell"></i> Butler service</li>
+                            <li><i class="fas fa-spa"></i> In-room spa services</li>
+                            <li><i class="fas fa-glass-cheers"></i> Complimentary champagne</li>
+                        </ul>
+                        
+                        <div class="text-center">
+                            <a href="booking_new.html" class="btn">Book Now</a>
+                            <a href="deluxe-best-view_new.html" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Basic Package -->
+                <article class="room-card">
+                    <img src="../static/images/basic package.jpg" alt="Basic Package Room" class="room-image" loading="lazy">
+                    <div class="room-content">
+                        <h3>Basic Package</h3>
+                        <div class="room-price">₹3,500 <span style="font-size: 1rem; color: #666;">/night</span></div>
+                        <p>Affordable comfort with essential amenities for budget travelers.</p>
+                        
+                        <ul class="room-features">
+                            <li><i class="fas fa-bed"></i> Comfortable twin beds</li>
+                            <li><i class="fas fa-wifi"></i> Basic Wi-Fi</li>
+                            <li><i class="fas fa-tv"></i> 24" TV</li>
+                            <li><i class="fas fa-snowflake"></i> Fan/AC</li>
+                            <li><i class="fas fa-bath"></i> Shared/Private bathroom</li>
+                            <li><i class="fas fa-parking"></i> Free parking</li>
+                        </ul>
+                        
+                        <div class="text-center">
+                            <a href="booking_new.html" class="btn">Book Now</a>
+                            <a href="basic_new.html" class="btn btn-secondary">View Details</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Package Comparison -->
+            <section class="package-comparison">
+                <h2 class="text-center mb-2">Compare Our Packages</h2>
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Features</th>
+                                <th>Basic</th>
+                                <th>Standard</th>
+                                <th>Premium</th>
+                                <th>Deluxe</th>
+                                <th>Family Suite</th>
+                                <th>Best View</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Price/Night</strong></td>
+                                <td>₹3,500</td>
+                                <td>₹5,000</td>
+                                <td>₹8,000</td>
+                                <td>₹12,000</td>
+                                <td>₹15,000</td>
+                                <td>₹18,000</td>
+                            </tr>
+                            <tr>
+                                <td>Free Wi-Fi</td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Air Conditioning</td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Room Service</td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Mini Bar</td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Spa Services</td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Butler Service</td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-times cross-icon"></i></td>
+                                <td><i class="fas fa-check check-icon"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <div class="text-center mt-3">
+                <a href="booking_new.html" class="btn btn-large">
+                    <i class="fas fa-calendar-check"></i> 
+                    Book Your Stay Now
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Journey Junction Hub. All rights reserved.</p>
+            <p>Experience luxury and comfort in every stay</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

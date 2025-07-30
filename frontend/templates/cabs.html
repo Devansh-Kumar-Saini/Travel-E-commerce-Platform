@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book reliable cab services with Journey Junction Hub - Airport transfers, city tours, and intercity travel with professional drivers.">
+    <title>Cab Services - Journey Junction Hub</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../static/css/shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .cabs-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('../static/images/Taxi/travel.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 cards per row on larger screens */
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        /* Stack cards on small screens */
+        @media (max-width: 768px) {
+            .service-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .service-content {
+            padding: 2rem;
+        }
+        
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+        
+        .booking-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+        
+        .form-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .fare-calculator {
+            background: #e8f5e8;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .estimated-fare {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4CAF50;
+            margin: 1rem 0;
+        }
+        
+        .vehicle-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .vehicle-option {
+            background: white;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .vehicle-option:hover,
+        .vehicle-option.selected {
+            border-color: #4CAF50;
+            background: #f0f8f0;
+        }
+        
+        .vehicle-icon {
+            font-size: 2rem;
+            color: #4CAF50;
+            margin-bottom: 0.5rem;
+        }
+        /* Vehicle Selection grid */
+        .vehicle-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .vehicle-options {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">JJH</a>
+            
+            <ul class="nav-list" id="navList">
+                <li><a href="../templates/index.html#home">Home</a></li>
+                <li><a href="../templates/elitemembers.html">Join Club</a></li>
+                <li><a href="../templates/booking.html">Book Vacation</a></li>
+                <li><a href="../templates/rooms.html">Rooms</a></li>
+                <li><a href="../templates/cabs.html">Cab Services</a></li>
+                <li><a href="../templates/index.html#reviews">Reviews</a></li>
+                <li><a href="../templates/index.html#about">About Us</a></li>
+                <li><a href="../templates/index.html#contact">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="cabs-hero">
+        <div class="container">
+            <h1>Professional Cab Services</h1>
+            <p>Reliable, comfortable, and affordable transportation for all your travel needs</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <!-- Services Overview -->
+            <section class="mb-3">
+                <div class="page-header">
+                    <h2>Our Transportation Services</h2>
+                    <p>From airport transfers to city tours, we provide safe and comfortable rides with professional drivers</p>
+                </div>
+                
+                <div class="service-cards">
+                    <div class="service-card">
+                        <img src="../static/images/Taxi/airport-transfer.jpg" alt="Airport Transfer" class="service-image" loading="lazy">
+                        <div class="service-content">
+                            <h3><i class="fas fa-plane"></i> Airport Transfers</h3>
+                            <div class="service-price">Starting from ₹800</div>
+                            <p>Hassle-free airport pickup and drop-off services. Professional drivers will track your flight and ensure timely service.</p>
+                            <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+                                <li><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Flight tracking</li>
+                                <li><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Meet & greet service</li>
+                                <li><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Luggage assistance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <img src="../static/images/Taxi/city-tour.jpg" alt="City Tours" class="service-image" loading="lazy">
+                        <div class="service-content">
+                            <h3><i class="fas fa-map-marked-alt"></i> City Tours</h3>
+                            <div class="service-price">Starting from ₹1,500</div>
+                            <p>Explore the city with our knowledgeable local drivers. Customizable tours to popular attractions and hidden gems.</p>
+                            <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+                                <li><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Local guide driver</li>
+                                <li><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Flexible itinerary</li>
+                                <li><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Photo stops included</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <img src="../static/images/Taxi/intercity.jpg" alt="Intercity Travel" class="service-image" loading="lazy">
+                        <div class="service-content">
+                            <h3><i class="fas fa-road"></i> Intercity Travel</h3>
+                            <div class="service-price">Starting from ₹12/km</div>
+                            <p>Comfortable long-distance travel between cities. Well-maintained vehicles with experienced drivers for safe journeys.</p>
+                            <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+                                <li><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> AC vehicles</li>
+                                <li><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Rest stops included</li>
+                                <li><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> 24/7 support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <img src="../static/images/Taxi/hourly-rental.jpg" alt="Hourly Rental" class="service-image" loading="lazy">
+                        <div class="service-content">
+                            <h3><i class="fas fa-clock"></i> Hourly Rental</h3>
+                            <div class="service-price">Starting from ₹300/hour</div>
+                            <p>Flexible hourly rentals for business meetings, shopping, or multiple stops. Driver waits for you at each location.</p>
+                            <ul style="list-style: none; padding: 0; margin: 1rem 0;">
+                                <li><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Minimum 2 hours</li>
+                                <li><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Multiple stops</li>
+                                <li><i class="fas fa-check" style="color: #4CAF50; margin-right: 0.5rem;"></i> Waiting time included</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Booking Form -->
+            <section class="booking-form">
+                <h2 class="text-center mb-2">
+                    <i class="fas fa-taxi"></i> 
+                    Book Your Cab
+                </h2>
+                
+                <form id="cabBookingForm">
+                    <div class="form-section">
+                        <h3><i class="fas fa-route"></i> Trip Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="serviceType">
+                                    <i class="fas fa-list"></i> Service Type
+                                </label>
+                                <select id="serviceType" name="serviceType" required>
+                                    <option value="">Select service type</option>
+                                    <option value="airport">Airport Transfer</option>
+                                    <option value="city-tour">City Tour</option>
+                                    <option value="intercity">Intercity Travel</option>
+                                    <option value="hourly">Hourly Rental</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="tripType">
+                                    <i class="fas fa-exchange-alt"></i> Trip Type
+                                </label>
+                                <select id="tripType" name="tripType" required>
+                                    <option value="">Select trip type</option>
+                                    <option value="one-way">One Way</option>
+                                    <option value="round-trip">Round Trip</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="pickup">
+                                    <i class="fas fa-map-marker-alt"></i> Pickup Location
+                                </label>
+                                <input type="text" id="pickup" name="pickup" placeholder="Enter pickup address" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="destination">
+                                    <i class="fas fa-flag-checkered"></i> Destination
+                                </label>
+                                <input type="text" id="destination" name="destination" placeholder="Enter destination address" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3><i class="fas fa-calendar-alt"></i> Date & Time</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="pickupDate">
+                                    <i class="fas fa-calendar"></i> Pickup Date
+                                </label>
+                                <input type="date" id="pickupDate" name="pickupDate" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="pickupTime">
+                                    <i class="fas fa-clock"></i> Pickup Time
+                                </label>
+                                <input type="time" id="pickupTime" name="pickupTime" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3><i class="fas fa-car"></i> Vehicle Selection</h3>
+                        <div class="vehicle-options">
+                            <div class="vehicle-option" data-vehicle="sedan" data-rate="12">
+                                <div class="vehicle-icon"><i class="fas fa-car"></i></div>
+                                <h4>Sedan</h4>
+                                <p>4 Seater</p>
+                                <p><strong>₹12/km</strong></p>
+                            </div>
+                            
+                            <div class="vehicle-option" data-vehicle="suv" data-rate="18">
+                                <div class="vehicle-icon"><i class="fas fa-car-side"></i></div>
+                                <h4>SUV</h4>
+                                <p>6-7 Seater</p>
+                                <p><strong>₹18/km</strong></p>
+                            </div>
+                            
+                            <div class="vehicle-option" data-vehicle="luxury" data-rate="25">
+                                <div class="vehicle-icon"><i class="fas fa-car-alt"></i></div>
+                                <h4>Luxury</h4>
+                                <p>4 Seater Premium</p>
+                                <p><strong>₹25/km</strong></p>
+                            </div>
+                            
+                            <div class="vehicle-option" data-vehicle="tempo" data-rate="20">
+                                <div class="vehicle-icon"><i class="fas fa-shuttle-van"></i></div>
+                                <h4>Tempo Traveller</h4>
+                                <p>12+ Seater</p>
+                                <p><strong>₹20/km</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3><i class="fas fa-users"></i> Additional Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="passengers">
+                                    <i class="fas fa-user-friends"></i> Number of Passengers
+                                </label>
+                                <select id="passengers" name="passengers" required>
+                                    <option value="">Select passengers</option>
+                                    <option value="1">1 Passenger</option>
+                                    <option value="2">2 Passengers</option>
+                                    <option value="3">3 Passengers</option>
+                                    <option value="4">4 Passengers</option>
+                                    <option value="5+">5+ Passengers</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contactNumber">
+                                    <i class="fas fa-phone"></i> Contact Number
+                                </label>
+                                <input type="tel" id="contactNumber" name="contactNumber" placeholder="Your phone number" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="specialRequests">
+                                <i class="fas fa-comment"></i> Special Requests (Optional)
+                            </label>
+                            <textarea id="specialRequests" name="specialRequests" rows="3" 
+                                      placeholder="Any special requirements or instructions..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="fare-calculator">
+                        <h3>Estimated Fare</h3>
+                        <div id="fareBreakdown">
+                            <p>Please fill in the details above to calculate fare</p>
+                        </div>
+                        <div class="estimated-fare" id="totalFare">₹0</div>
+                        <p style="font-size: 0.9rem; color: #666;">*Final fare may vary based on actual distance and waiting time</p>
+                    </div>
+                    
+                    <div class="text-center mt-2">
+                        <button type="submit" class="btn btn-large">
+                            <i class="fas fa-credit-card"></i> 
+                            Book Cab Now
+                        </button>
+                        <a href="index_new.html" class="btn btn-secondary btn-large ml-2">
+                            <i class="fas fa-arrow-left"></i> 
+                            Back to Home
+                        </a>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Journey Junction Hub. All rights reserved.</p>
+            <p>Safe travels with our professional cab services</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const vehicleOptions = document.querySelectorAll('.vehicle-option');
+            const fareBreakdown = document.getElementById('fareBreakdown');
+            const totalFare = document.getElementById('totalFare');
+            let selectedVehicle = null;
+            
+            // Vehicle selection
+            vehicleOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    vehicleOptions.forEach(v => v.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedVehicle = {
+                        type: this.dataset.vehicle,
+                        rate: parseInt(this.dataset.rate)
+                    };
+                    calculateFare();
+                });
+            });
+            
+            // Set minimum date to today
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('pickupDate').min = today;
+            
+            // Calculate fare function
+            function calculateFare() {
+                const serviceType = document.getElementById('serviceType').value;
+                const tripType = document.getElementById('tripType').value;
+                
+                if (!selectedVehicle || !serviceType) {
+                    fareBreakdown.innerHTML = '<p>Please select service type and vehicle</p>';
+                    totalFare.textContent = '₹0';
+                    return;
+                }
+                
+                let baseFare = 0;
+                let description = '';
+                
+                switch(serviceType) {
+                    case 'airport':
+                        baseFare = selectedVehicle.rate * 25; // Assuming 25km average
+                        description = `Airport Transfer (${selectedVehicle.type}) - Estimated 25km`;
+                        break;
+                    case 'city-tour':
+                        baseFare = selectedVehicle.rate * 50; // Assuming 50km city tour
+                        description = `City Tour (${selectedVehicle.type}) - Estimated 50km`;
+                        break;
+                    case 'intercity':
+                        baseFare = selectedVehicle.rate * 100; // Assuming 100km intercity
+                        description = `Intercity Travel (${selectedVehicle.type}) - Estimated 100km`;
+                        break;
+                    case 'hourly':
+                        baseFare = 300 * 4; // Assuming 4 hours minimum
+                        description = `Hourly Rental (${selectedVehicle.type}) - 4 hours minimum`;
+                        break;
+                }
+                
+                if (tripType === 'round-trip') {
+                    baseFare *= 2;
+                    description += ' (Round Trip)';
+                }
+                
+                fareBreakdown.innerHTML = `
+                    <p><strong>Service:</strong> ${description}</p>
+                    <p><strong>Vehicle:</strong> ${selectedVehicle.type.charAt(0).toUpperCase() + selectedVehicle.type.slice(1)}</p>
+                    <p><strong>Rate:</strong> ₹${selectedVehicle.rate}/km</p>
+                `;
+                
+                totalFare.textContent = `₹${baseFare.toLocaleString()}`;
+            }
+            
+            // Add event listeners for fare calculation
+            ['serviceType', 'tripType'].forEach(id => {
+                document.getElementById(id).addEventListener('change', calculateFare);
+            });
+            
+            // Form submission
+            document.getElementById('cabBookingForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (!selectedVehicle) {
+                    alert('Please select a vehicle type');
+                    return;
+                }
+                
+                // Validate pickup date/time
+                const pickupDate = new Date(document.getElementById('pickupDate').value);
+                const pickupTime = document.getElementById('pickupTime').value;
+                const now = new Date();
+                
+                if (pickupDate < now.toDateString()) {
+                    alert('Pickup date cannot be in the past');
+                    return;
+                }
+                
+                // Simulate booking confirmation
+                alert('Cab booking request submitted successfully! You will receive a confirmation call within 5 minutes.');
+                
+                // Redirect to confirmation page
+                window.location.href = 'paymentpage_new.html';
+            });
+        });
+    </script>
+</body>
+</html>

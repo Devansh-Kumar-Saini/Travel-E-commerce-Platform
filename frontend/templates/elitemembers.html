@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Journey Junction Hub Elite Club for exclusive benefits, premium services, and special discounts on all your travel bookings.">
+    <title>Elite Members Club - Journey Junction Hub</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../static/css/shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .elite-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .elite-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 1rem;
+            font-family: 'CatchyMager', Arial, sans-serif;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #4CAF50;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+        
+        .membership-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .tier-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .tier-card.featured {
+            transform: scale(1.05);
+            border: 3px solid #4CAF50;
+        }
+        
+        .tier-header {
+            padding: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .tier-card.featured .tier-header {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        }
+        
+        .tier-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .tier-features {
+            padding: 2rem;
+        }
+        
+        .tier-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .tier-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .tier-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .tier-features i {
+            color: #4CAF50;
+            margin-right: 0.5rem;
+            width: 20px;
+        }
+        
+        .membership-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 3rem auto;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff6b35;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">JJH</a>
+            
+            <ul class="nav-list" id="navList">
+                <li><a href="../templates/index.html#home">Home</a></li>
+                <li><a href="../templates/elitemembers.html">Join Club</a></li>
+                <li><a href="../templates/booking.html">Book Vacation</a></li>
+                <li><a href="../templates/rooms.html">Rooms</a></li>
+                <li><a href="../templates/cabs.html">Cab Services</a></li>
+                <li><a href="../templates/index.html#reviews">Reviews</a></li>
+                <li><a href="../templates/index.html#about">About Us</a></li>
+                <li><a href="../templates/index.html#contact">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="elite-hero">
+        <div class="container">
+            <h1><i class="fas fa-crown"></i> Elite Members Club</h1>
+            <p>Join our exclusive club and unlock premium benefits, special discounts, and VIP treatment</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <!-- Benefits Section -->
+            <section class="mb-3">
+                <h2 class="text-center mb-2">Exclusive Member Benefits</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <h3>Special Discounts</h3>
+                        <p>Get up to 25% off on all bookings, exclusive member-only deals, and early bird offers.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-concierge-bell"></i>
+                        </div>
+                        <h3>Priority Service</h3>
+                        <p>Skip the queues with priority check-in, dedicated customer support, and express booking.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Complimentary Upgrades</h3>
+                        <p>Enjoy free room upgrades, complimentary breakfast, and exclusive amenities.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-calendar-star"></i>
+                        </div>
+                        <h3>Exclusive Events</h3>
+                        <p>Access to member-only events, travel workshops, and destination previews.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Loyalty Rewards</h3>
+                        <p>Earn points on every booking and redeem for free stays, upgrades, and experiences.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>24/7 Support</h3>
+                        <p>Round-the-clock dedicated support line for all your travel needs and emergencies.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Membership Tiers -->
+            <section class="mb-3">
+                <h2 class="text-center mb-2">Choose Your Membership Tier</h2>
+                <div class="membership-tiers">
+                    <!-- Silver Tier -->
+                    <div class="tier-card">
+                        <div class="tier-header">
+                            <h3><i class="fas fa-medal"></i> Silver Member</h3>
+                            <div class="tier-price">₹2,999 <span style="font-size: 1rem;">/year</span></div>
+                            <p>Perfect for occasional travelers</p>
+                        </div>
+                        <div class="tier-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 10% discount on all bookings</li>
+                                <li><i class="fas fa-check"></i> Priority customer support</li>
+                                <li><i class="fas fa-check"></i> Free cancellation</li>
+                                <li><i class="fas fa-check"></i> Monthly newsletter</li>
+                                <li><i class="fas fa-check"></i> Basic loyalty points</li>
+                            </ul>
+                            <div class="text-center mt-2">
+                                <button class="btn" onclick="selectTier('silver')">Choose Silver</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gold Tier -->
+                    <div class="tier-card featured">
+                        <div class="featured-badge">Most Popular</div>
+                        <div class="tier-header">
+                            <h3><i class="fas fa-star"></i> Gold Member</h3>
+                            <div class="tier-price">₹4,999 <span style="font-size: 1rem;">/year</span></div>
+                            <p>Best value for regular travelers</p>
+                        </div>
+                        <div class="tier-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 20% discount on all bookings</li>
+                                <li><i class="fas fa-check"></i> Priority check-in/out</li>
+                                <li><i class="fas fa-check"></i> Complimentary breakfast</li>
+                                <li><i class="fas fa-check"></i> Room upgrade (subject to availability)</li>
+                                <li><i class="fas fa-check"></i> Enhanced loyalty points (2x)</li>
+                                <li><i class="fas fa-check"></i> Access to exclusive deals</li>
+                            </ul>
+                            <div class="text-center mt-2">
+                                <button class="btn" onclick="selectTier('gold')">Choose Gold</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Platinum Tier -->
+                    <div class="tier-card">
+                        <div class="tier-header">
+                            <h3><i class="fas fa-crown"></i> Platinum Member</h3>
+                            <div class="tier-price">₹7,999 <span style="font-size: 1rem;">/year</span></div>
+                            <p>Ultimate luxury experience</p>
+                        </div>
+                        <div class="tier-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> 25% discount on all bookings</li>
+                                <li><i class="fas fa-check"></i> Guaranteed room upgrades</li>
+                                <li><i class="fas fa-check"></i> Complimentary spa services</li>
+                                <li><i class="fas fa-check"></i> Personal travel concierge</li>
+                                <li><i class="fas fa-check"></i> Premium loyalty points (3x)</li>
+                                <li><i class="fas fa-check"></i> Exclusive member events</li>
+                                <li><i class="fas fa-check"></i> 24/7 dedicated support</li>
+                            </ul>
+                            <div class="text-center mt-2">
+                                <button class="btn" onclick="selectTier('platinum')">Choose Platinum</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Membership Form -->
+            <section class="membership-form" id="membershipForm" style="display: none;">
+                <h2 class="text-center mb-2">
+                    <i class="fas fa-user-plus"></i> 
+                    Join Elite Members Club
+                </h2>
+                
+                <form id="eliteForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">
+                                <i class="fas fa-user"></i> First Name
+                            </label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName">
+                                <i class="fas fa-user"></i> Last Name
+                            </label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i> Email Address
+                            </label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i> Phone Number
+                            </label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="selectedTier">
+                            <i class="fas fa-medal"></i> Selected Membership Tier
+                        </label>
+                        <input type="text" id="selectedTier" name="selectedTier" readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">
+                            <i class="fas fa-map-marker-alt"></i> Address
+                        </label>
+                        <textarea id="address" name="address" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" required> 
+                            I agree to the <a href="#" style="color: #4CAF50;">Terms and Conditions</a> and <a href="#" style="color: #4CAF50;">Privacy Policy</a>
+                        </label>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-large">
+                            <i class="fas fa-credit-card"></i> 
+                            Complete Membership
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-large ml-2" onclick="hideForm()">
+                            <i class="fas fa-arrow-left"></i> 
+                            Back to Tiers
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="text-center mt-3" id="ctaSection">
+                <h2>Ready to Elevate Your Travel Experience?</h2>
+                <p>Join thousands of satisfied members who enjoy exclusive benefits and premium services.</p>
+                <a href="#membershipForm" class="btn btn-large">
+                    <i class="fas fa-rocket"></i> 
+                    Start Your Elite Journey
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Journey Junction Hub. All rights reserved.</p>
+            <p>Elite Members Club - Where luxury meets convenience</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        function selectTier(tier) {
+            const tierNames = {
+                'silver': 'Silver Member - ₹2,999/year',
+                'gold': 'Gold Member - ₹4,999/year',
+                'platinum': 'Platinum Member - ₹7,999/year'
+            };
+            
+            document.getElementById('selectedTier').value = tierNames[tier];
+            document.getElementById('membershipForm').style.display = 'block';
+            document.getElementById('ctaSection').style.display = 'none';
+            
+            // Smooth scroll to form
+            document.getElementById('membershipForm').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+        
+        function hideForm() {
+            document.getElementById('membershipForm').style.display = 'none';
+            document.getElementById('ctaSection').style.display = 'block';
+        }
+        
+        document.getElementById('eliteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            alert('Thank you for joining our Elite Members Club! You will receive a confirmation email shortly.');
+            
+            // Redirect to payment or confirmation page
+            window.location.href = 'paymentpage_new.html';
+        });
+    </script>
+</body>
+</html>

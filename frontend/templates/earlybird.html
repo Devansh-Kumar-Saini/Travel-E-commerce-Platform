@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Early Bird Discount - Book 2 months in advance and save up to 30% on your vacation with Journey Junction Hub.">
+    <title>Early Bird Discount - Journey Junction Hub</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../static/css/shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .offer-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('../static/images/page2offers1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .discount-badge {
+            background: #ff6b35;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .offer-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .detail-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .detail-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .detail-icon {
+            font-size: 3rem;
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+        
+        .countdown-timer {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .timer-display {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .timer-unit {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .timer-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .timer-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .booking-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 3rem auto;
+        }
+        
+        .savings-calculator {
+            background: #e8f5e8;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .savings-amount {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4CAF50;
+            margin: 1rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .timer-display {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .discount-badge {
+                font-size: 1.5rem;
+                padding: 0.75rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">JJH</a>
+            
+            <ul class="nav-list" id="navList">
+                <li><a href="../templates/index.html#home">Home</a></li>
+                <li><a href="../templates/elitemembers.html">Join Club</a></li>
+                <li><a href="../templates/booking.html">Book Vacation</a></li>
+                <li><a href="../templates/rooms.html">Rooms</a></li>
+                <li><a href="../templates/cabs.html">Cab Services</a></li>
+                <li><a href="../templates/index.html#reviews">Reviews</a></li>
+                <li><a href="../templates/index.html#about">About Us</a></li>
+                <li><a href="../templates/index.html#contact">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="offer-hero">
+        <div class="container">
+            <div class="discount-badge">
+                <i class="fas fa-percentage"></i> UP TO 30% OFF
+            </div>
+            <h1>Early Bird Discount</h1>
+            <p>Book 2 months in advance and save big on your dream vacation!</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="page-content">
+        <div class="container">
+            <!-- Offer Details -->
+            <section class="offer-details">
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Book 2 Months Ahead</h3>
+                    <p>Plan your vacation at least 60 days in advance to qualify for this amazing discount offer.</p>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Save Up to 30%</h3>
+                    <p>Enjoy substantial savings on accommodation, packages, and additional services with early booking.</p>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Premium Benefits</h3>
+                    <p>Get priority room selection, complimentary upgrades, and exclusive early bird perks.</p>
+                </div>
+                
+                <div class="detail-card">
+                    <div class="detail-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Flexible Booking</h3>
+                    <p>Free date changes up to 30 days before travel and hassle-free cancellation policy.</p>
+                </div>
+            </section>
+
+            <!-- Countdown Timer -->
+            <section class="countdown-timer">
+                <h2><i class="fas fa-clock"></i> Limited Time Offer</h2>
+                <p>This early bird discount is available for a limited time only!</p>
+                
+                <div class="timer-display">
+                    <div class="timer-unit">
+                        <span class="timer-number" id="days">30</span>
+                        <span class="timer-label">Days</span>
+                    </div>
+                    <div class="timer-unit">
+                        <span class="timer-number" id="hours">12</span>
+                        <span class="timer-label">Hours</span>
+                    </div>
+                    <div class="timer-unit">
+                        <span class="timer-number" id="minutes">45</span>
+                        <span class="timer-label">Minutes</span>
+                    </div>
+                    <div class="timer-unit">
+                        <span class="timer-number" id="seconds">30</span>
+                        <span class="timer-label">Seconds</span>
+                    </div>
+                </div>
+                
+                <p style="font-size: 1.1rem; opacity: 0.9;">
+                    Don't miss out on this incredible opportunity to save on your next vacation!
+                </p>
+            </section>
+
+            <!-- Booking Form -->
+            <section class="booking-form">
+                <h2 class="text-center mb-2">
+                    <i class="fas fa-gift"></i> 
+                    Claim Your Early Bird Discount
+                </h2>
+                
+                <form id="earlyBirdForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="destination">
+                                <i class="fas fa-map-marker-alt"></i> Destination
+                            </label>
+                            <select id="destination" name="destination" required>
+                                <option value="">Select your destination</option>
+                                <option value="goa">Goa, India</option>
+                                <option value="kerala">Kerala, India</option>
+                                <option value="rajasthan">Rajasthan, India</option>
+                                <option value="himachal">Himachal Pradesh, India</option>
+                                <option value="kashmir">Kashmir, India</option>
+                                <option value="andaman">Andaman & Nicobar Islands</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guests">
+                                <i class="fas fa-users"></i> Number of Guests
+                            </label>
+                            <select id="guests" name="guests" required>
+                                <option value="">Select guests</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5+ Guests</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="travelDate">
+                                <i class="fas fa-calendar-alt"></i> Travel Date
+                            </label>
+                            <input type="date" id="travelDate" name="travelDate" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="duration">
+                                <i class="fas fa-clock"></i> Duration
+                            </label>
+                            <select id="duration" name="duration" required>
+                                <option value="">Select duration</option>
+                                <option value="3">3 Days / 2 Nights</option>
+                                <option value="4">4 Days / 3 Nights</option>
+                                <option value="5">5 Days / 4 Nights</option>
+                                <option value="7">7 Days / 6 Nights</option>
+                                <option value="10">10 Days / 9 Nights</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="package">
+                            <i class="fas fa-gift"></i> Package Type
+                        </label>
+                        <select id="package" name="package" required>
+                            <option value="">Select package</option>
+                            <option value="basic">Basic Package - ₹5,000/night</option>
+                            <option value="standard">Standard Package - ₹8,000/night</option>
+                            <option value="premium">Premium Package - ₹12,000/night</option>
+                            <option value="deluxe">Deluxe Package - ₹15,000/night</option>
+                        </select>
+                    </div>
+                    
+                    <div class="savings-calculator" id="savingsDisplay" style="display: none;">
+                        <h3><i class="fas fa-calculator"></i> Your Savings</h3>
+                        <div id="savingsBreakdown">
+                            <p>Regular Price: <span id="regularPrice">₹0</span></p>
+                            <p>Early Bird Discount (30%): <span id="discountAmount">₹0</span></p>
+                        </div>
+                        <div class="savings-amount">
+                            You Save: <span id="totalSavings">₹0</span>
+                        </div>
+                        <div style="font-size: 1.2rem; font-weight: bold; color: #4CAF50;">
+                            Final Price: <span id="finalPrice">₹0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-2">
+                        <button type="submit" class="btn btn-large" style="width: 100%;">
+                            <i class="fas fa-rocket"></i> 
+                            Book Now with 30% Discount
+                        </button>
+                        
+                        <a href="index_new.html" class="btn btn-secondary mt-1" style="width: 100%; display: block;">
+                            <i class="fas fa-arrow-left"></i> 
+                            Back to Home
+                        </a>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Terms and Conditions -->
+            <section class="card mt-3">
+                <h3><i class="fas fa-file-contract"></i> Terms & Conditions</h3>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>Booking must be made at least 60 days before travel date</li>
+                    <li>Discount applicable on base package price only</li>
+                    <li>Cannot be combined with other offers or promotions</li>
+                    <li>Free cancellation up to 30 days before travel</li>
+                    <li>Date changes allowed once without penalty</li>
+                    <li>Valid for new bookings only</li>
+                    <li>Subject to availability and blackout dates</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Journey Junction Hub. All rights reserved.</p>
+            <p>Early Bird Discount - Plan ahead and save more!</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set minimum date to 60 days from today
+            const today = new Date();
+            const minDate = new Date(today.getTime() + (60 * 24 * 60 * 60 * 1000));
+            document.getElementById('travelDate').min = minDate.toISOString().split('T')[0];
+            
+            // Package prices
+            const packagePrices = {
+                'basic': 5000,
+                'standard': 8000,
+                'premium': 12000,
+                'deluxe': 15000
+            };
+            
+            // Calculate savings
+            function calculateSavings() {
+                const guests = document.getElementById('guests').value;
+                const duration = document.getElementById('duration').value;
+                const packageType = document.getElementById('package').value;
+                
+                if (guests && duration && packageType) {
+                    const pricePerNight = packagePrices[packageType];
+                    const nights = parseInt(duration) - 1;
+                    const regularPrice = pricePerNight * nights * parseInt(guests);
+                    const discountAmount = Math.round(regularPrice * 0.3);
+                    const finalPrice = regularPrice - discountAmount;
+                    
+                    document.getElementById('regularPrice').textContent = `₹${regularPrice.toLocaleString()}`;
+                    document.getElementById('discountAmount').textContent = `₹${discountAmount.toLocaleString()}`;
+                    document.getElementById('totalSavings').textContent = `₹${discountAmount.toLocaleString()}`;
+                    document.getElementById('finalPrice').textContent = `₹${finalPrice.toLocaleString()}`;
+                    
+                    document.getElementById('savingsDisplay').style.display = 'block';
+                } else {
+                    document.getElementById('savingsDisplay').style.display = 'none';
+                }
+            }
+            
+            // Add event listeners
+            ['guests', 'duration', 'package'].forEach(id => {
+                document.getElementById(id).addEventListener('change', calculateSavings);
+            });
+            
+            // Countdown timer
+            function updateCountdown() {
+                const endDate = new Date(today.getTime() + (30 * 24 * 60 * 60 * 1000)); // 30 days from now
+                const now = new Date().getTime();
+                const distance = endDate - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            }
+            
+            // Update countdown every second
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            
+            // Form submission
+            document.getElementById('earlyBirdForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const travelDate = new Date(document.getElementById('travelDate').value);
+                const today = new Date();
+                const daysDifference = Math.ceil((travelDate - today) / (1000 * 60 * 60 * 24));
+                
+                if (daysDifference < 60) {
+                    alert('Travel date must be at least 60 days from today to qualify for early bird discount.');
+                    return;
+                }
+                
+                alert('Congratulations! You qualify for the 30% early bird discount. Redirecting to booking page...');
+                window.location.href = 'booking_new.html';
+            });
+        });
+    </script>
+</body>
+</html>
