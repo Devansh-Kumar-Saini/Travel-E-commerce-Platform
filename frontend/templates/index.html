@@ -1,203 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Journey Junction Hub - Your ultimate travel companion for vacation planning, hotel bookings, and cab services.">
-    <title>Journey Junction Hub - Your Travel Companion</title>
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../static/css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="../static/images/homebackground.jpg" as="image">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="Journey Junction Hub - Your ultimate travel companion for vacation planning, hotel bookings, and cab services." />
+  <title>Journey Junction Hub - Your Travel Companion</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../static/css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Preload critical resources -->
+  <link rel="preload" href="../static/images/homebackground.jpg" as="image" />
+
+  <!-- Smooth Scroll CSS -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px; /* Adjust based on navbar height */
+    }
+  </style>
 </head>
 <body>
-    <!-- Header Navigation -->
-    <header>
-        <nav class="navbar">
-            <a href="#home" class="logo">JJH</a>
-            
-            <ul class="nav-list" id="navList">
-                <li><a href="../templates/index.html#home">Home</a></li>
-                <li><a href="../templates/elitemembers.html">Join Club</a></li>
-                <li><a href="../templates/booking.html">Book Vacation</a></li>
-                <li><a href="../templates/rooms.html">Rooms</a></li>
-                <li><a href="../templates/cabs.html">Cab Services</a></li>
-                <li><a href="../templates/index.html#reviews">Reviews</a></li>
-                <li><a href="../templates/index.html#about">About Us</a></li>
-                <li><a href="../templates/index.html#contact">Contact</a></li>
-            </ul>
-            
-            <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
-    </header>
+  <!-- Header Navigation -->
+  <header>
+    <nav class="navbar">
+      <a href="#home" class="logo">JJH</a>
+      <ul class="nav-list" id="navList">
+        <li><a href="#home">Home</a></li>
+            <li><a href="../templates/elitemembers.html">Join Club</a></li>
+            <li><a href="../templates/booking.html">Book Vacation</a></li>
+            <li><a href="../templates/rooms.html">Rooms</a></li>
+            <li><a href="../templates/cabs.html">Cab Services</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Toggle mobile menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <main>
-        <section id="home" class="homepage">
-            <div class="homeheading">
-                <span>WELCOME TO</span>
-                <h1 class="heading1">Journey<br>Junction<br>Hub</h1>
-                <span>Your Travel Companion</span>
-            </div>
-        </section>
+  <!-- Hero Section -->
+  <main>
+    <section id="home" class="homepage">
+      <div class="homeheading">
+        <span>WELCOME TO</span>
+        <h1 class="heading1">Journey<br>Junction<br>Hub</h1>
+        <span>Your Travel Companion</span>
+      </div>
+    </section>
 
-        <!-- Promos and Offers Section -->
-        <section class="promos-offers">
-            <div class="container">
-                <h2>Promos and Offers</h2>
-                <div class="cards-container">
-                    <article class="card">
-                        <a href="earlybird.html" aria-label="Early Bird Discount Details">
-                            <img src="../static/images/page2offers1.jpg" alt="Early Bird Discount Offer" loading="lazy">
-                            <div class="card-content">
-                                <h3>Early Bird Discount</h3>
-                                <p>Get up to 30% discount on booking 2 months before vacation.</p>
-                            </div>
-                        </a>
-                    </article>
-                    
-                    <article class="card">
-                        <a href="3+1.html" aria-label="3+1 Package Details">
-                            <img src="../static/images/page2offers2.jpg" alt="3+1 Package Offer" loading="lazy">
-                            <div class="card-content">
-                                <h3>3+1 Package</h3>
-                                <p>Book for 3 nights and get the 4th night absolutely free!</p>
-                            </div>
-                        </a>
-                    </article>
-                    
-                    <article class="card">
-                        <a href="elitemembers.html" aria-label="Elite Members Benefits">
-                            <img src="../static/images/page2offers3.jpg" alt="Elite Members Benefits" loading="lazy">
-                            <div class="card-content">
-                                <h3>Elite Members</h3>
-                                <p>Join our elite club for exclusive benefits and premium services.</p>
-                            </div>
-                        </a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Section -->
-        <section class="gallery">
-            <div class="container">
-                <h2>Our Gallery</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="../static/images/gallery-1.jpg" alt="Beautiful destination view 1" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="../static/images/gallery-2.jpg" alt="Beautiful destination view 2" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="../static/images/gallery-3.jpg" alt="Beautiful destination view 3" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="../static/images/gallery-4.jpg" alt="Beautiful destination view 4" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="../static/images/gallery-5.jpg" alt="Beautiful destination view 5" loading="lazy">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="../static/images/gallery-6.jpg" alt="Beautiful destination view 6" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Reviews Section -->
-        <section id="reviews" class="presspage">
-            <div class="container">
-                <div class="pressheading">
-                    <span>Customer Reviews</span>
-                </div>
-                <div class="reviews-container">
-                    <article class="reviews-item">
-                        <h3>Amazing Experience!</h3>
-                        <p>"Journey Junction Hub made our vacation planning so easy. The service was exceptional and the accommodations were perfect. Highly recommended!"</p>
-                        <footer>- Sarah Johnson</footer>
-                    </article>
-                    
-                    <article class="reviews-item">
-                        <h3>Outstanding Service</h3>
-                        <p>"From booking to checkout, everything was seamless. The staff was friendly and the facilities exceeded our expectations."</p>
-                        <footer>- Michael Chen</footer>
-                    </article>
-                    
-                    <article class="reviews-item">
-                        <h3>Perfect Getaway</h3>
-                        <p>"The best vacation we've ever had! The attention to detail and customer service was remarkable. We'll definitely be back!"</p>
-                        <footer>- Emily Rodriguez</footer>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Us Section -->
-        <section id="about" class="aboutus">
-            <div class="container">
-                <div class="aboutus-content">
-                    <h2>About Journey Junction Hub</h2>
-                    <p>Welcome to Journey Junction Hub, your premier travel companion for unforgettable experiences. We specialize in creating personalized vacation packages that cater to your unique preferences and budget.</p>
-                    <p>With years of experience in the travel industry, we pride ourselves on delivering exceptional service, comfortable accommodations, and seamless travel experiences. From luxury resorts to budget-friendly options, we have something for every traveler.</p>
-                    <p>Our dedicated team works around the clock to ensure your journey is smooth, memorable, and filled with amazing discoveries. Let us help you create memories that will last a lifetime.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contactus">
-            <div class="container">
-                <h2>Contact Us</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
-                        <p>123 Travel Street<br>
-                        Adventure City, AC 12345<br>
-                        United States</p>
-                    </div>
-                    
-                    <div class="contact-info">
-                        <h3><i class="fas fa-phone"></i> Phone</h3>
-                        <p>Main: +1 (555) 123-4567<br>
-                        Toll Free: 1-800-JOURNEY<br>
-                        Emergency: +1 (555) 987-6543</p>
-                    </div>
-                    
-                    <div class="contact-info">
-                        <h3><i class="fas fa-envelope"></i> Email</h3>
-                        <p>info@journeyjunctionhub.com<br>
-                        bookings@journeyjunctionhub.com<br>
-                        support@journeyjunctionhub.com</p>
-                    </div>
-                    
-                    <div class="contact-info">
-                        <h3><i class="fas fa-clock"></i> Hours</h3>
-                        <p>Monday - Friday: 9:00 AM - 8:00 PM<br>
-                        Saturday: 10:00 AM - 6:00 PM<br>
-                        Sunday: 12:00 PM - 5:00 PM</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer style="background: #333; color: white; text-align: center; padding: 2rem;">
-        <div class="container">
-            <p>&copy; 2024 Journey Junction Hub. All rights reserved.</p>
-            <p>Follow us on social media for the latest updates and travel inspiration!</p>
+    <!-- Promos and Offers Section -->
+    <section class="promos-offers">
+      <div class="container">
+        <h2>Promos and Offers</h2>
+        <div class="cards-container">
+          <article class="card">
+            <a href="earlybird.html">
+              <img src="../static/images/page2offers1.jpg" alt="Early Bird Discount Offer" loading="lazy" width="400" height="250" />
+              <div class="card-content">
+                <h3>Early Bird Discount</h3>
+                <p>Get up to 30% discount on booking 2 months before vacation.</p>
+              </div>
+            </a>
+          </article>
+          <article class="card">
+            <a href="3+1.html">
+              <img src="../static/images/page2offers2.jpg" alt="3+1 Package Offer" loading="lazy" width="400" height="250" />
+              <div class="card-content">
+                <h3>3+1 Package</h3>
+                <p>Book for 3 nights and get the 4th night absolutely free!</p>
+              </div>
+            </a>
+          </article>
+          <article class="card">
+            <a href="elitemembers.html">
+              <img src="../static/images/page2offers3.jpg" alt="Elite Members Benefits" loading="lazy" width="400" height="250" />
+              <div class="card-content">
+                <h3>Elite Members</h3>
+                <p>Join our elite club for exclusive benefits and premium services.</p>
+              </div>
+            </a>
+          </article>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- JavaScript for mobile menu -->
-    <script src="../assets/js/main.js"></script>
+    <!-- Gallery Section -->
+    <section class="gallery">
+      <div class="container">
+        <h2>Our Gallery</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="../static/images/gallery-1.jpg" alt="Destination 1" loading="lazy" width="300" height="200" /></div>
+          <div class="gallery-item"><img src="../static/images/gallery-2.jpg" alt="Destination 2" loading="lazy" width="300" height="200" /></div>
+          <div class="gallery-item"><img src="../static/images/gallery-3.jpg" alt="Destination 3" loading="lazy" width="300" height="200" /></div>
+          <div class="gallery-item"><img src="../static/images/gallery-4.jpg" alt="Destination 4" loading="lazy" width="300" height="200" /></div>
+          <div class="gallery-item"><img src="../static/images/gallery-5.jpg" alt="Destination 5" loading="lazy" width="300" height="200" /></div>
+          <div class="gallery-item"><img src="../static/images/gallery-6.jpg" alt="Destination 6" loading="lazy" width="300" height="200" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="presspage">
+      <div class="container">
+        <div class="pressheading">
+          <span>Customer Reviews</span>
+        </div>
+        <div class="reviews-container">
+          <article class="reviews-item">
+            <h3>Amazing Experience!</h3>
+            <p>"Journey Junction Hub made our vacation planning so easy."</p>
+            <footer>- Sarah Johnson</footer>
+          </article>
+          <article class="reviews-item">
+            <h3>Outstanding Service</h3>
+            <p>"Everything was seamless. The staff was friendly and professional."</p>
+            <footer>- Michael Chen</footer>
+          </article>
+          <article class="reviews-item">
+            <h3>Perfect Getaway</h3>
+            <p>"The best vacation we've ever had! We'll definitely be back!"</p>
+            <footer>- Emily Rodriguez</footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="aboutus">
+      <div class="container">
+        <h2>About Journey Junction Hub</h2>
+        <p>We specialize in creating personalized vacation packages...</p>
+        <p>Our dedicated team works to make your journey smooth and memorable.</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contactus">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+            <p>123 Travel Street, Adventure City, AC 12345</p>
+          </div>
+          <div class="contact-info">
+            <h3><i class="fas fa-phone"></i> Phone</h3>
+            <p>Main: +1 (555) 123-4567</p>
+          </div>
+          <div class="contact-info">
+            <h3><i class="fas fa-envelope"></i> Email</h3>
+            <p>info@journeyjunctionhub.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer style="background: #333; color: white; text-align: center; padding: 2rem;">
+    <div class="container">
+      <p>&copy; 2024 Journey Junction Hub. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="../assets/js/main.js"></script>
 </body>
 </html>
